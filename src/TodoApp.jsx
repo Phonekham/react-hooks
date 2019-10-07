@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import AppBar from "@material-ui/core/AppBar";
 import Paper from "@material-ui/core/Paper";
 import Typography from "@material-ui/core/Typography";
+import Grid from "@material-ui/core/Grid";
 import { Toolbar } from "@material-ui/core";
 
 import TodoList from "./TodoList";
@@ -33,8 +34,12 @@ function TodoApp() {
             <Typography color="inherit">Todos with hook</Typography>
           </Toolbar>
         </AppBar>
-        <TodoForm addTodo={addTodo}></TodoForm>
-        <TodoList todos={todos}></TodoList>
+        <Grid container justify="center" style={{ marginTop: "1rem" }}>
+          <Grid item xs={11} md={8} lg={4}>
+            <TodoForm addTodo={addTodo}></TodoForm>
+            <TodoList todos={todos}></TodoList>
+          </Grid>
+        </Grid>
       </Paper>
     </div>
   );
